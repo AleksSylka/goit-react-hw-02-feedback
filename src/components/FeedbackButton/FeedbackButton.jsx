@@ -1,9 +1,11 @@
 import React from "react";
+import css from './FeedbackButton.module.css'
+import { getUpperCase } from "helper-js/helper";
 
 const FeedbackButton = ({ options, onLeaveFeedback }) => 
-(<div>
+(<div className={css['card-btn']}>
     {options.map(option => (
-        <button type="button" key={option} onClick={() => onLeaveFeedback(option)}>{option}</button>
+        <button className={css['btn']} type="button" key={option} onClick={() => onLeaveFeedback(option)}>{getUpperCase(option)}</button>
       ))}
     
 </div>)
